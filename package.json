@@ -1,0 +1,23 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "chat app using sockets and mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkIsBravo/ChatApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkIsBravo/ChatApp/issues"
+  },
+  "homepage": "https://github.com/MarkIsBravo/ChatApp#readme",
+  "dependencies": {
+    "mongodb": "^2.2.31",
+    "socket.io": "^2.0.3"
+  }
+}
