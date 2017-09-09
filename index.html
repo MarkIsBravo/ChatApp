@@ -10,6 +10,17 @@
     <title>ChatApp</title>
 </head>
 <body>
-    <h1>ChatApp</h1>
+    <div class = 'container'>
+        <h1>ChatApp</h1>
+        <button id = 'clear' class = 'btn clear-btn'>Clear</button>
+        <div id = 'chat'>
+            <input type = 'text' id = 'username'
+                   class = 'username-input' placeholder = 'Enter your name ...'>
+            <div class = 'message-list' style = 'height: 100px; width: 100px; border: 1px solid black;'>
+            </div>
+            <textarea class = 'message-input' id = 'textarea'
+                      placeholder = 'Enter message ...'></textarea>
+        </div>
+    </div>
 </body>
 </html>
