@@ -1,9 +1,9 @@
-const mongo = require ('mongodb');
-const mongoClient = mongo.mongoClient;
+const Mongo = require ('mongodb');
+const MongoClient = Mongo.MongoClient;
 const client = require('socket.io').listen(3000).sockets;
 
 //connect to mongo
-mongoClient.connect('mongodb://localhost:27017/chat_app_mongo', function(err, db){
+MongoClient.connect('mongodb://localhost:27017/cmongochat', function(err, db){
     if (err){
         throw err;
     }
@@ -11,7 +11,7 @@ mongoClient.connect('mongodb://localhost:27017/chat_app_mongo', function(err, db
 
     //connect to socket.io
     client.on('connection', function(socket){
-        let message = db.collection('messages');
+        let text = db.collection('texts');
 
         //send status
         sendStatus = function(status){
@@ -19,7 +19,7 @@ mongoClient.connect('mongodb://localhost:27017/chat_app_mongo', function(err, db
         };
 
         //get messages from mongo collection
-        message.find().limit(100).sort({_id : 1}).toArray(function(err,res){
+        text.find().limit(100).sort({_id : 1}).toArray(function(err,res){
             if(err){
                 throw err;
             }
@@ -67,7 +67,7 @@ mongoClient.connect('mongodb://localhost:27017/chat_app_mongo', function(err, db
                 sendStatus('Please enter a name and message');
             } else {
                 // insert message
-                chat.insert({name: name, message: message}, function(){
+                text.insert({name: name, message: message}, function(){
                     client.emit('output', [data]);
 
                     //send status object
@@ -81,8 +81,8 @@ mongoClient.connect('mongodb://localhost:27017/chat_app_mongo', function(err, db
 
         // handle clear
         socket.on('clear', function(data){
-            // remove all chats from the collection
-            chat.remove({}, function(){
+            // remove all messages from the collection
+            text.remove({}, function(){
                 //emit cleared
                 socket.emit('cleared');
             })
