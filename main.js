@@ -22,11 +22,11 @@ window.onload=function(){
     var setStatus = function(s){
         // set status
         status.textContent = s;
-        if(s !== statusDefault){
+        // if(s !== statusDefault){
             var delay = setTimeout(function(){
                 setStatus(statusDefault)
             }, 4000);
-        }
+        // }
     }
 
     //login controll

@@ -41,7 +41,7 @@ MongoClient.connect('mongodb://localhost:27017/cmongochat', function(err, db){
                         sendStatus('Please enter your password.')
                     }
                 }else if(!err && res == true){
-                    sendStatus(`Welcome, ${username}`);
+                    sendStatus(`${username} joined the chat`);
                     socket.emit('login-required', username);
                 }
             });
@@ -72,7 +72,7 @@ MongoClient.connect('mongodb://localhost:27017/cmongochat', function(err, db){
 
                     //send status object
                     sendStatus({
-                        message: 'Message sent',
+                        message: `${name} sent a message on ${new Date()}.`,
                         clear: true
                     });
                 });
