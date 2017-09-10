@@ -33,37 +33,31 @@ Documents are data instances that are arranged in BSON, which is JSON-like data.
 ### BSON
 BSON is a JSON-like syntax that MongoDB uses to organize it's documents. It functions very similarly to JSON, as we can see here:
 
-```JSON
+```bash
 {
-    key: ,
-
-    key2: "Obi-Wan",
-
-    key3: ["R2", "D2"]
-
-    key4: 
-    [
-    	{ 
-    		["Darth Vader"], 
-    		["Tie Advanced x1"],
-    			[
-					{"Stormtrooper"},
-					{"Stormtrooper"},
-					{"Stormtrooper"},
-					{"Stormtrooper"}
-					{"Stormtrooper"}
-    			]
-			
-    	},
-    	{
-    		["Emperor Palpatine"],
-    		["Eclipse Shuttle"],
-    		[ 
-    			{"Imperial Guard"},
-    			{"Imperial Guard"}
-    		]
-    	}
-    ]
+  key: ,
+  key2: "",
+  key3: ["Death", "Star"]
+  key4: 
+  [{ 
+  ["Darth Vader"], 
+  ["Tie Advanced x1"],
+  [
+    {"Stormtrooper"},
+    {"Stormtrooper"},
+    {"Stormtrooper"},
+    {"Stormtrooper"}
+    {"Stormtrooper"}
+  ]
+	},
+    {
+    ["Emperor Palpatine"],
+    ["Eclipse Shuttle"],
+    [ 
+    {"Imperial Guard"},
+    {"Imperial Guard"}
+    ]}
+  ]
 }
 ```
 
