@@ -5,7 +5,8 @@ html{
     justify-content: center;
     background: url('./images/travel.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     font-family: 'Cabin', sans-serif;
     font-size: 25px;
     opacity: .9;
