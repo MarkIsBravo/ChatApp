@@ -75,21 +75,25 @@ mongo ### Starts the mongo shell ( > )
 ###### Check here for more detailed instructions on JavaScript-based commands on how to interact with the MongoDB Shell.
 
 # Mongo Shell
-The Mongo shell is a Javascript interpreter that allows for querying through data sets.
+The Mongo shell is a Javascript interpreter that allows for querying through the database/collections/documents.
 
-### Differences
+Follow the following steps in order to create your first MongoDB Database.
+
+#### Some Common Differences between MongoDB and SQL/PostGRES
 MongoDB doesn't necessarily allow for Join tables. 
 Every document in the database can have different fields.
 
+<hr>
+
 ### Some Companies Using MongoDB:
-##### Google
-##### Facebook
-##### Cisco
-##### UPS
-##### Ebay
-##### Intuit
-##### The New York Times
-##### Verizon
-##### NBC
+### Google
+### Facebook
+### Cisco
+### UPS
+### Ebay
+### Intuit
+### The New York Times
+### Verizon
+### NBC
 
 ![MongoDB](https://www.mongodb.com/assets/images/resource-center/icons/university.svg)
