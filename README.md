@@ -4,7 +4,7 @@ A simple app built using JS front-end and a MongoDB back-end. JS
 Users can input text and chat with each other anonymously.
 
 # MongoDB Tutorial
-
+![MongoDB](https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png)
 ### What is MongoDB?
 MongoDB is a document-oriented database. A fast and easily scalable NoSQL database that stores documents and data/objects in JSON-like syntax, it is a scalable, agile, and cloud-ready tool. MongoDB is popular in corporate environments - it was also designed to save organizations money and is maintained by a private corporation.
 
