@@ -58,6 +58,12 @@ textarea {
 .forms {
     margin-top: 100px; 
 }
+#register-form{
+    display: none;
+}
+#login{
+    display: none;
+}
 #login-account {
     display: inline-block;
     margin: -10px 10px 0 0;
