@@ -4,19 +4,21 @@
 html{
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 0px;
     background: url('./images/travel.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     font-family: 'Cabin', sans-serif;
     font-size: 25px;
-    opacity: .9;
+    text-decoration: none;
 }
+
 h1 {
     font-size: 60px;
     color: white;
 }
+
 input {
     width: 100%;
     padding: 10px;
@@ -27,6 +29,7 @@ input {
     margin-bottom: 20px;
     resize: vertical;    
 }
+
 textarea {
     width: 100%;
     padding: 20px;
@@ -35,13 +38,14 @@ textarea {
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 20px;
-    resize: vertical;     
+    resize: vertical;  
+       
 }
-.message-list {
-    height: 300px; 
-    width: 300px;
-    border: 1px solid black;
+
+#messages {
+    background-color: white;
 }
+
 #clear {
     display: inline-block;
     margin: -10px 10px 0 0;
@@ -58,12 +62,15 @@ textarea {
 .forms {
     margin-top: 100px; 
 }
+
 #register-form{
     display: none;
 }
+
 #login{
     display: none;
 }
+
 #login-account {
     display: inline-block;
     margin: -10px 10px 0 0;
@@ -75,11 +82,13 @@ textarea {
     opacity: .7;
     background-color: white;
 }
+
 .register-login {
     display: flex;
     margin-top: -20px;
     font-size: 20px;
 }
+
 .register {
     display: inline-block;
     margin: -10px 10px 0 0;
@@ -91,6 +100,7 @@ textarea {
     opacity: .7;
     background-color: white;    
 }
+
 .return {
     display: inline-block;
     margin: -10px 10px 0 0;
@@ -102,6 +112,7 @@ textarea {
     opacity: .7;
     background-color: white;    
 }
+
 .username-input {
     top: 2px;
     font-weight: bold;
@@ -110,4 +121,8 @@ textarea {
     padding-right: 20px; 
     padding-top: -10px;
     opacity: .9;     
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
