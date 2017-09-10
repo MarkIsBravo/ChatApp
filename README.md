@@ -30,11 +30,44 @@ Collections contain a series or documents that can be made up of almost any data
 ### Documents
 Documents are data instances that are arranged in BSON, which is JSON-like data. These documents can contain almost any kind of data as long as they are in an object that works in key-value-pair.
 
-{
-    "key": "some data"
-}
+### BSON
+BSON is a JSON-like syntax that MongoDB uses to organize it's documents. It functions very similarly to JSON, as we can see here:
 
-# Installation for OSX:
+```JSON
+{
+    key: ,
+
+    key2: "Obi-Wan",
+
+    key3: ["R2", "D2"]
+
+    key4: 
+    [
+    	{ 
+    		["Darth Vader"], 
+    		["Tie Advanced x1"],
+    			[
+					{"Stormtrooper"},
+					{"Stormtrooper"},
+					{"Stormtrooper"},
+					{"Stormtrooper"}
+					{"Stormtrooper"}
+    			]
+			
+    	},
+    	{
+    		["Emperor Palpatine"],
+    		["Eclipse Shuttle"],
+    		[ 
+    			{"Imperial Guard"},
+    			{"Imperial Guard"}
+    		]
+    	}
+    ]
+}
+```
+
+# Installation (OSX):
 ### There are several ways to install MongoDB on your machine.
 
 ![install](https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/install.png)
@@ -69,15 +102,29 @@ mongod ### Starts the server.
 ```
 
 ```javascript
-mongo ### Starts the mongo shell ( > )
+mongo ### Starts the mongo shell ( indicated with the > symbol )
 ```
 
 ###### Check here for more detailed instructions on JavaScript-based commands on how to interact with the MongoDB Shell.
 
-# Mongo Shell
-The Mongo shell is a Javascript interpreter that allows for querying through the database/collections/documents.
+# Using the Mongo Shell
+The Mongo shell is a Javascript interpreter that allows for querying through the database/collections/documents. In the next few lines, we will take you through the procedure of creating your first MongoDB Database. One thing to know, however, is that you can't actually create a database with a query in the Mongo shell -- MongoDB does this on the fly.
 
-Follow the following steps in order to create your first MongoDB Database.
+### Make a Collection - and some Queries
+Follow these steps in order to create your first MongoDB collection. 
+Afterwards, we will parse through it with some mongo queries.
+
+1) Run mongod and mongo in two separate terminal instances.
+```javascript
+mongod <-terminal a ### terminal b-> mongo
+```
+
+2) Type the following command to initialize, or "switch" into a new database. Note: this step actually creates the database; in order for it to save you must enter some data.
+```javascript
+use GeneralAssembly
+```
+
+3) 
 
 #### Some Common Differences between MongoDB and SQL/PostGRES
 MongoDB doesn't necessarily allow for Join tables. 
