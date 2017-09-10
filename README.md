@@ -34,7 +34,45 @@ Documents are data instances that are arranged in BSON, which is JSON-like data.
     "key": "some data"
 }
 
-# How To Get Started:
+# Installation for OSX:
+### There are several ways to install MongoDB on your machine.
+
+![install](https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/install.png)
+
+##### Homebrew:
+1) Open your Terminal.
+2) Run the following:
+```javascript
+brew update
+brew install mongodb
+```
+
+##### Manual Install:
+1) On MongoDB.com and navigate to Downloads. Select the Community Server tab and hit Download. This will be a zipped file.
+
+2) Unpack the zipped file folder and place into your Applications folder for relatively easy access.
+
+3) Rename the folder into MongoDB and create the following directory inside:
+```javascript
+mkdir -p /data/db
+```
+Then, run the following line. This is to ensure proper permissions.
+```
+sudo chown -R 'id -un` /data/db
+```
+
+MongoDB will store data inside /data/db by default. 
+
+4) Restart your terminal and open a two new windows (or tabs). Then, run:
+```javascript
+mongod ### Starts the server. 
+```
+
+```javascript
+mongo ### Starts the mongo shell ( > )
+```
+
+###### Check here for more detailed instructions on JavaScript-based commands on how to interact with the MongoDB Shell.
 
 # Mongo Shell
 The Mongo shell is a Javascript interpreter that allows for querying through data sets.
