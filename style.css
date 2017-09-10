@@ -39,6 +39,30 @@ textarea {
     resize: vertical;     
 }
 
+.register {
+    display: inline-block;
+    margin: -10px 10px 0 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.8;
+    box-shadow: none;
+    border-radius: 5px; 
+    opacity: .7;
+    background-color: white;    
+}
+
+.return {
+    display: inline-block;
+    margin: -10px 10px 0 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.8;
+    box-shadow: none;
+    border-radius: 5px; 
+    opacity: .7;
+    background-color: white;    
+}
+
 .username-input {
     top: 2px;
     font-weight: bold;
