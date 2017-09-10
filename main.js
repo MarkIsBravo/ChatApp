@@ -15,6 +15,8 @@ window.onload=function(){
     var registerForm = element('register-form');
     var registerNameInput = element('registername-input');
     var registerPwdInput = element('registerpassword-input');
+    var loginBtn = element('login');
+    var registerBtn = element('register');
 
     // set default status
     var statusDefault = status.textContent;
@@ -28,6 +30,21 @@ window.onload=function(){
             }, 4000);
         // }
     }
+
+    // 'register' button action
+    registerBtn.addEventListener('click', function(){
+        loginForm.style.display = 'none';
+        registerBtn.style.display = 'none';
+        registerForm.style.display = 'inline';
+        loginBtn.style.display = 'inline';
+    });
+
+    loginBtn.addEventListener('click', function(){
+        registerForm.style.display = 'none';
+        loginBtn.style.display = 'none';
+        loginForm.style.display = 'inline';
+        registerBtn.style.display = 'inline';
+    });
 
     //login controll
     loginForm.addEventListener('submit', function(event){
