@@ -87,7 +87,10 @@ window.onload=function(){
 
         // show username
         socket.on('login-required', function(data){
-            username.setAttribute('value',data)
+            username.setAttribute('value',data);
+            element('chat').style.display = 'inline';
+            loginForm.style.display = 'none';
+            registerBtn.style.display = 'none';
         })
 
         // get status from server
