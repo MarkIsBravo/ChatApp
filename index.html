@@ -14,7 +14,22 @@
     <div class = 'container'>
         <h1>ChatApp</h1>
         <div class = 'register-login'>
-            <a href="register.html"><span class="home">Register/Login</span></a>
+            <!-- <a href="register.html"><span class="home">Register/Login</span></a> -->
+            <div class = 'forms'>
+                <!-- <div class = 'back-form'><a href="index.html"><span class="home">Back to Chat</span></a></div> -->
+                <form id = 'login-form'>
+                    <input type = 'text' id = 'username-input' placeholder = 'Username'>
+                    <input type = 'password' id = 'password-input' placeholder = 'Password'>
+                    <input type = 'submit' id = 'login-input' value = 'Log in'>
+                </form>
+                <button id = 'register'>Register</button>
+                <form id = 'register-form'>
+                    <input type = 'text' id = 'registername-input' placeholder='Username'>
+                    <input type = 'password' id = 'registerpassword-input' placeholder='Password'>
+                    <input type = 'submit' id = 'register-input' value = 'Register'>
+                </form>
+                <button id = 'login'>Return</button>
+            </div>
         </div></br>
         <button id = 'clear' class = 'btn clear-btn'>Clear</button>
         <div id = 'status'></div>
