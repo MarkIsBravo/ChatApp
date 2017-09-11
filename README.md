@@ -1,5 +1,5 @@
 # ChatApp
-A simple app built using JS front-end and a MongoDB back-end. JS 
+A simple app built using JS front-end and a MongoDB back-end.
 
 Users can input text and chat with each other anonymously.
 
@@ -7,13 +7,13 @@ Users can input text and chat with each other anonymously.
 ![MongoDB](https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png)
 
 ### Getting Started: What is MongoDB?
-MongoDB is a document-oriented database. A fast and easily scalable NoSQL database that stores documents and data/objects in JSON-like syntax, it is a scalable, agile, and cloud-ready tool. MongoDB is popular in corporate environments - it was also designed to save organizations money and is maintained by a private corporation.
+MongoDB is a document-oriented database. A fast and easily scalable NoSQL database, MongoDB that stores documents and data/objects in JSON-like syntax called BSON. Many organizations recognize it is a scalable, agile, and cloud-ready tool. MongoDB is popular in corporate environments - it was also designed to save organizations money and is maintained by a private corporation.
 
 MongoDB comes from a combination of the words "HUMONGOUS" and "DATA".
 
 NoSQL databases are different from relational databases such as MySQL and PostGRES. Relational databases must be designed top-down - more often than not, schema, field types data types, and even the amount of characters limited in the database must be designated first.
 
-What sets MongoDB apart is it's document-data paradigm that doesn'r really require pre-defined schema. This allows for the creation of databases of varying requirements, relatively fast querying and indexing, and allowing the use of various data structures on the fly. As a result, MongoDB allows development teams to create relatively scalable back-end operations and web applications. 
+What sets MongoDB apart is it's document-data paradigm that doesn't require pre-defined schema. This allows for the creation of databases of varying requirements, relatively fast querying and indexing, and allowing the use of various data structures on the fly. You can also run JS in the Mongo shell. As a result, MongoDB allows development teams to create relatively scalable back-end operations and web applications. 
 
 MongoDB lets you develop faster and scale bigger. Modern web applications require more flexible data structures with schemas that can evolve seamlessly and quickly.
 
@@ -55,7 +55,8 @@ BSON is a JSON-like syntax that MongoDB uses to organize it's documents. It func
     [ 
     {"Imperial Guard"},
     {"Imperial Guard"}
-    ]}
+    ]
+    }
   ]
 }
 ```
@@ -116,6 +117,7 @@ mongod <-terminal a ### terminal b-> mongo
 ```bash
 use GeneralAssembly
 ```
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut1.png)
 
 3) Before we start inserting data, let's add a user. 
 ```bash
@@ -126,11 +128,13 @@ db.createUser
   roles: ["dbAdmin"]
 })
 ```
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut2.png)
 
 4) Now, we will make a collection. Collections will store more data in the form of documents.
 ```bash
 db.createCollection("subordinates");
 ```
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut3.png)
 
 Additionally, check out all current collections in our db GeneralAssembly by running:
 ```bash 
@@ -141,10 +145,13 @@ show collections
 ```bash
 db.subordinates.insert({f_name:"John", l_name:"Doe"})
 ```
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut4.png)
+
 Congratulations - you have created a person/document.
 
 But more importantly, did you notice this?
---> image
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut5.png)
+
 We have now created an instance of a person as a document with f_name and l_name, but it was assigned an id by Mongo. Unlike in a relational database, where you have to have to create an id, set a primary key, et cetera - these are automatically generated.
 
 6) Let's add some multiple folks into our subordinates collection - at the same time:
@@ -157,36 +164,34 @@ db.subordinates.insert([{f_name:"John", l_name:"Foe"}, {f_name:"John", l_name:"G
 db.subordinates.update({l_name:"Hoe"},{l_name:"Joe"})
 db.subordinates.update({l_name:"Hoe"},{f_name: "John", l_name:"Joe"})
 ```
---> image
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut6.png)
 Wait, we just removed his first name. That's awkward.
 
 Let's drop him from existence:
 ```bash
 db.subordinates.remove({"l_name":"Joe"});
 ``` 
----> image
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut7.png)
 
 8) Let's take a look at our subordinates collection now. This is also an excellent time to chain MongoDB functions. See if you can spot the pattern below (note: pretty() lays the information in a more readable manner).
 Run:
 ```bash
 db.subordinates.find().pretty();
 ```
----> image
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut8.png)
 
 9) Great work! Now, to to wrap this up, let's finish with a little Javascript query. Since mongo runs javascript, we can use this to print information into the console. We will iterate through subordinates using forEach.
 ```javascript
 db.subordinates.find().forEach(function(x){print("Archangel "+x.l_name)});
 ```
----> image
+![](https://github.com/MarkIsBravo/ChatApp/blob/master/images/tut9.png)
 
 10) Great work playing God. However, since you accidentally created two fellows with the same name, you should drop the db from existence -- if you want to.
 ```bash
 db.dropDatabase();
 ```
 
-
-
-Want to figure out how to change the name? Read up here.
+Want to figure out how to change the name? Read up [here](https://docs.mongodb.com/) .
 
 #### Some Common Differences between MongoDB and SQL/PostGRES
 MongoDB doesn't necessarily allow for Join tables. 
