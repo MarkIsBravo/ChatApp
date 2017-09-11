@@ -197,18 +197,19 @@ Every document in the database can have different fields.
 #Wrapping Up
 MongoDB can be a lot of fun and offers a different approach to thinking about how to design your databases. As with any new technologies, there is a learning curve to be wary of -- but if you can build familiarity with new things you can easily add them to your tool belt.
 
-###Thanks for reading!
-- Tom, Mark, Dennis
+### Thanks for reading!
+Sincerely,
+Tom, Mark, Dennis
 
 ### Some Companies Using MongoDB:
-### Google
-### Facebook
-### Cisco
-### UPS
-### Ebay
-### Intuit
-### The New York Times
-### Verizon
-### NBC
+- ### Google
+- ### Facebook
+- ### Cisco
+- ### UPS
+- ### Ebay
+- ### Intuit
+- ### The New York Times
+- ### Verizon
+- ### NBC
 
 ![MongoDB](https://www.mongodb.com/assets/images/resource-center/icons/university.svg)
