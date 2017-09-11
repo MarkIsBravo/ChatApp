@@ -48,8 +48,7 @@ BSON is a JSON-like syntax that MongoDB uses to organize it's documents. It func
     {"Stormtrooper"},
     {"Stormtrooper"}
     {"Stormtrooper"}
-  ]
-	},
+  ]},
     {
     ["Emperor Palpatine"],
     ["Eclipse Shuttle"],
@@ -109,22 +108,97 @@ Follow these steps in order to create your first MongoDB collection.
 Afterwards, we will parse through it with some mongo queries.
 
 1) Run mongod and mongo in two separate terminal instances.
-```javascript
+```bash
 mongod <-terminal a ### terminal b-> mongo
 ```
 
 2) Type the following command to initialize, or "switch" into a new database. Note: this step actually creates the database; in order for it to save you must enter some data.
-```javascript
+```bash
 use GeneralAssembly
 ```
 
-3) 
+3) Before we start inserting data, let's add a user. 
+```bash
+db.createUser
+({
+  user: "GA-God",
+  pwd: "12345",
+  roles: ["dbAdmin"]
+})
+```
+
+4) Now, we will make a collection. Collections will store more data in the form of documents.
+```bash
+db.createCollection("subordinates");
+```
+
+Additionally, check out all current collections in our db GeneralAssembly by running:
+```bash 
+show collections
+```
+
+5) We will now insert a person into our subordinates collection:
+```bash
+db.subordinates.insert({f_name:"John", l_name:"Doe"})
+```
+Congratulations - you have created a person/document.
+
+But more importantly, did you notice this?
+--> image
+We have now created an instance of a person as a document with f_name and l_name, but it was assigned an id by Mongo. Unlike in a relational database, where you have to have to create an id, set a primary key, et cetera - these are automatically generated.
+
+6) Let's add some multiple folks into our subordinates collection - at the same time:
+```bash
+db.subordinates.insert([{f_name:"John", l_name:"Foe"}, {f_name:"John", l_name:"Goe"}, {f_name:"John", l_name:"Hoe"}])
+```
+
+7) Hmm. The last John's name is kind of silly. Let's change it:
+```bash
+db.subordinates.update({l_name:"Hoe"},{l_name:"Joe"})
+db.subordinates.update({l_name:"Hoe"},{f_name: "John", l_name:"Joe"})
+```
+--> image
+Wait, we just removed his first name. That's awkward.
+
+Let's drop him from existence:
+```bash
+db.subordinates.remove({"l_name":"Joe"});
+``` 
+---> image
+
+8) Let's take a look at our subordinates collection now. This is also an excellent time to chain MongoDB functions. See if you can spot the pattern below (note: pretty() lays the information in a more readable manner).
+Run:
+```bash
+db.subordinates.find().pretty();
+```
+---> image
+
+9) Great work! Now, to to wrap this up, let's finish with a little Javascript query. Since mongo runs javascript, we can use this to print information into the console. We will iterate through subordinates using forEach.
+```javascript
+db.subordinates.find().forEach(function(x){print("Archangel "+x.l_name)});
+```
+---> image
+
+10) Great work playing God. However, since you accidentally created two fellows with the same name, you should drop the db from existence -- if you want to.
+```bash
+db.dropDatabase();
+```
+
+
+
+Want to figure out how to change the name? Read up here.
 
 #### Some Common Differences between MongoDB and SQL/PostGRES
 MongoDB doesn't necessarily allow for Join tables. 
 Every document in the database can have different fields.
 
 <hr>
+
+#Wrapping Up
+MongoDB can be a lot of fun and offers a different approach to thinking about how to design your databases. As with any new technologies, there is a learning curve to be wary of -- but if you can build familiarity with new things you can easily add them to your tool belt.
+
+###Thanks for reading!
+- Tom, Mark, Dennis
 
 ### Some Companies Using MongoDB:
 ### Google
