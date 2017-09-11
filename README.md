@@ -199,11 +199,12 @@ Every document in the database can have different fields.
 
 <hr>
 
-#Wrapping Up
+## Wrapping Up
 MongoDB can be a lot of fun and offers a different approach to thinking about how to design your databases. As with any new technologies, there is a learning curve to be wary of -- but if you can build familiarity with new things you can easily add them to your tool belt.
 
-### Thanks for reading!
+Thanks for reading!
 Sincerely,
+<br>
 Tom, Mark, Dennis
 
 ### Some Companies Using MongoDB:
